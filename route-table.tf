@@ -52,6 +52,7 @@ resource "aws_route_table" "database" {
 
 resource "aws_route_table_association" "app_private_subnet_rt_az1" {
   subnet_id      = aws_subnet.app-private_subnet_az1.id
+  #subnet_id      = [ aws_subnet.app-private_subnet_az1.id, aws_subnet.app-private_subnet_az1.id] this type also work not work while doing check once
   route_table_id = aws_route_table.private.id
 }
 
